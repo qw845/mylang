@@ -80,7 +80,6 @@ It is designed for:
 
 
 
-\- \*\*Windows\*\*: get \[mylang-v1.0.zip](https://github.com/qw845/mylang/releases/download/v1.0/mylang-v1.0.zip) from the releases page. Unzip and run. \*\*No Python required.\*\*
 
 \- \*\*Source code\*\*: `git clone https://github.com/qw845/mylang.git`
 
