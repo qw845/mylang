@@ -8,8 +8,6 @@ A simple programming language written from scratch.
 
 \[!\[Release]】(https://github.com/qw845/mylang/releases)
 
-- **Windows**: get [mylang-v1.0.zip](https://github.com/qw845/mylang/releases/download/v1.0/mylang-v1.0.zip) from the releases page. Unzip and run. **No Python required.**
-
 
 
 \## What is mylang?
