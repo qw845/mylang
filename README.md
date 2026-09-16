@@ -296,3 +296,8 @@ Issues and pull requests are welcome.
 
 
 \[MIT](LICENSE)
+
+
+
+If you have any comments, you can send them to havedrink@outlook.com
+Thanks
