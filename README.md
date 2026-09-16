@@ -6,9 +6,7 @@ A simple programming language written from scratch.
 
 
 
-\[!\[Release](https://img.shields.io/badge/release-v1.0-blue)](https://github.com/qw845/mylang/releases)
-
-\[!\[License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+\[!\[Release]】(https://github.com/qw845/mylang/releases)
 
 
 
