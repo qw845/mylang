@@ -1,0 +1,60 @@
+// ====== 1. for 循环 ======
+print("--- for ---");
+for (let i = 0; i < 5; i += 1) {
+    print(i);
+}
+
+// ====== 2. switch ======
+print("--- switch ---");
+let x = 2;
+switch (x) {
+    case 1:
+        print("one");
+        break;
+    case 2:
+        print("two");
+        break;
+    default:
+        print("other");
+}
+
+// ====== 3. try/catch ======
+print("--- try/catch ---");
+try {
+    let y = 1 / 0;
+    print("不会到这里");
+} catch (e) {
+    print("捕获: " + e);
+}
+
+// ====== 4. 匿名函数 + stdlib ======
+print("--- stdlib ---");
+let arr = [5, 2, 8, 1, 9, 3];
+let doubled = map(arr, fn(x) { return x * 2; });
+print("doubled: " + str(doubled));
+
+let evens = filter(arr, fn(x) { return x % 2 == 0; });
+print("evens: " + str(evens));
+
+let total = reduce(arr, fn(a, b) { return a + b; }, 0);
+print("sum: " + str(total));
+
+print("sorted: " + str(bubble_sort(arr)));
+print("max: " + str(max_of(arr)));
+print("min: " + str(min_of(arr)));
+
+// ====== 5. 字符串 ======
+print("--- strings ---");
+print(repeat("ab", 3));
+print(capitalize("hello"));
+print("starts: " + str(starts_with("hello", "he")));
+print("ends: " + str(ends_with("hello", "lo")));
+
+// ====== 6. 文件读写 ======
+print("--- file ---");
+write_file("test.txt", "line1\nline2\nline3");
+let lines = read_lines("test.txt");
+print("行数: " + str(len(lines)));
+for (let i = 0; i < len(lines); i += 1) {
+    print(lines[i]);
+}

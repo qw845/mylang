@@ -1,0 +1,142 @@
+// ========== 函数式 ==========
+fn map(arr, f) {
+    let out = [];
+    for (let i = 0; i < len(arr); i += 1) {
+        out = push(out, f(arr[i]));
+    }
+    return out;
+}
+
+fn filter(arr, f) {
+    let out = [];
+    for (let i = 0; i < len(arr); i += 1) {
+        if (f(arr[i])) {
+            out = push(out, arr[i]);
+        }
+    }
+    return out;
+}
+
+fn reduce(arr, f, init) {
+    let acc = init;
+    for (let i = 0; i < len(arr); i += 1) {
+        acc = f(acc, arr[i]);
+    }
+    return acc;
+}
+
+fn each(arr, f) {
+    for (let i = 0; i < len(arr); i += 1) {
+        f(arr[i]);
+    }
+}
+
+// ========== 数学 ==========
+fn sum(arr) {
+    let s = 0;
+    for (let i = 0; i < len(arr); i += 1) {
+        s += arr[i];
+    }
+    return s;
+}
+
+fn max_of(arr) {
+    let m = arr[0];
+    for (let i = 1; i < len(arr); i += 1) {
+        if (arr[i] > m) { m = arr[i]; }
+    }
+    return m;
+}
+
+fn min_of(arr) {
+    let m = arr[0];
+    for (let i = 1; i < len(arr); i += 1) {
+        if (arr[i] < m) { m = arr[i]; }
+    }
+    return m;
+}
+
+fn abs_of(x) {
+    if (x < 0) { return -x; }
+    return x;
+}
+
+fn pow(base, exp) {
+    let r = 1;
+    for (let i = 0; i < exp; i += 1) {
+        r *= base;
+    }
+    return r;
+}
+
+// ========== 排序 ==========
+fn bubble_sort(arr) {
+    let a = arr;
+    let n = len(a);
+    for (let i = 0; i < n - 1; i += 1) {
+        for (let j = 0; j < n - 1 - i; j += 1) {
+            if (a[j] > a[j + 1]) {
+                let t = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = t;
+            }
+        }
+    }
+    return a;
+}
+
+fn quick_sort(arr) {
+    if (len(arr) <= 1) { return arr; }
+    let pivot = arr[0];
+    let left = [];
+    let right = [];
+    for (let i = 1; i < len(arr); i += 1) {
+        if (arr[i] < pivot) {
+            left = push(left, arr[i]);
+        } else {
+            right = push(right, arr[i]);
+        }
+    }
+    return concat(concat(quick_sort(left), [pivot]), quick_sort(right));
+}
+
+fn concat(a, b) {
+    let out = [];
+    for (let i = 0; i < len(a); i += 1) { out = push(out, a[i]); }
+    for (let i = 0; i < len(b); i += 1) { out = push(out, b[i]); }
+    return out;
+}
+
+// ========== 字符串 ==========
+fn repeat(s, n) {
+    let out = "";
+    for (let i = 0; i < n; i += 1) {
+        out += s;
+    }
+    return out;
+}
+
+fn starts_with(s, prefix) {
+    return substr(s, 0, len(prefix)) == prefix;
+}
+
+fn ends_with(s, suffix) {
+    return substr(s, len(s) - len(suffix), len(suffix)) == suffix;
+}
+
+fn capitalize(s) {
+    if (len(s) == 0) { return s; }
+    return upper(substr(s, 0, 1)) + lower(substr(s, 1, len(s) - 1));
+}
+
+// ========== 文件 ==========
+fn read_lines(path) {
+    if (!exists(path)) { return []; }
+    let content = read_file(path);
+    if (len(content) == 0) { return []; }
+    return split(trim(content), "\n");
+}
+
+fn write_lines(path, lines) {
+    write_file(path, join("\n", lines));
+}

@@ -1,0 +1,44 @@
+// 变量与运算
+let name = "mylang";
+let version = 1;
+print("Welcome to " + name + " v" + version);
+
+// 条件
+let x = 42;
+if (x % 2 == 0) {
+    print("even");
+} else {
+    print("odd");
+}
+
+// 数组
+let arr = [1, 2, 3, 4, 5];
+let sum = 0;
+let j = 0;
+while (j < len(arr)) {
+    sum += arr[j];
+    j += 1;
+}
+print("sum = " + sum);
+
+// 闭包
+fn make_counter() {
+    let count = 0;
+    fn inc() {
+        count += 1;
+        return count;
+    }
+    return inc;
+}
+
+let c = make_counter();
+print(c());
+print(c());
+print(c());
+
+// 高阶函数
+fn apply(f, x) {
+    return f(x);
+}
+fn square(n) { return n * n; }
+print(apply(square, 7));
